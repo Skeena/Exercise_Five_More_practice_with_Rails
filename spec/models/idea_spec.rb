@@ -9,7 +9,7 @@ RSpec.describe Idea, type: :model do
 
   it "has a description" do 
   	description = Idea.create!(description: "My description")
-  	another_description = Idea.create!(description: "Another description")
+  	another_description = Idea.create!(description: "Another description") 
   	expect(another_description.description).to eq("Another description")
   end 
 end
