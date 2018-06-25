@@ -2,15 +2,15 @@ require "rails_helper"
 
 RSpec.describe Idea, type: :model do
   it "has a name" do 
-    idea = Idea.create(name: "My Awesome Idea Name") 			# creating a new idea 'instance'
-    second_idea = Idea.create(name: "My Second Idea Name") 	# creating another new idea 'instance'
-    expect(second_idea.name).to eq("My Second Idea Name") 		# this is our expectation
+    idea = Idea.create!(name: "My Awesome Idea Name", description: "My description") 
+    second_idea = Idea.create!(name: "My Second Idea Name", description: "My second description")
+    expect(idea.name).to eq("My Awesome Idea Name") 
   end
 
   it "has a description" do 
-  	idea = Idea.create(description: "My description")
+  	idea = Idea.create!(name: "My Awesome Idea Name", description: "My description")
   	second_idea = Idea.create(description: "second_description")
-  	expect(second_idea.description).to eq("second_description")
+  	expect(idea.description).to eq("My description")
   end 
 
   describe "associations" do
